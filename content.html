@@ -5,34 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer assignment</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        input[type=number] {
+            background-color: green;
+            color: white;
+            width: 100px;
+        }
+    </style>
 </head>
-<body>
-    <h1>This is a developer assignment</h1>
-    
+<body>  
+    <h1 id="question"></h1>
+
     <div class="form">
-        <label for="answer">Enter your answer:</label>
-        <input type="number" id="answerField" class="answerField">
+        <label>Enter your answer:</label>
+        <input type="number" class="answerField">
         <input type ="submit" value="Submit answer" class="answerSubmit">
     </div>
 
-    <div class="result">
-        <p class=correctAnswer></p>
+    <div class = "result">
+        <p id="feedback"></p>
     </div>
 
     <script>
-        let randomNumberA = Math.floor(Math.random() * 100) + 1;
-        let randomNumberB = Math.floor(Math.random() * 100) + 1;
+        let randomNumberA = Math.floor(Math.random() * 1000) + 1;
+        let randomNumberB = Math.floor(Math.random() * 1000) + 1;
+        let sum = randomNumberA + randomNumberB;
         
-        //Here I'm using const because I'm not storing values but references
-        const userAnswer = document.querySelector('.correctAnswer');
-
         const answerSubmit = document.querySelector('.answerSubmit');
         const answerField = document.querySelector('.answerField');
+
+        answerSubmit.addEventListener('click', checkAnswer);
         
-        let resetButton;
+        question.textContent="What is a sum of " + randomNumberA + " and " + randomNumberB + "?";
+        answerField.focus();
 
         function checkAnswer() {
-            alert("I am placeholder");
+            const answer = answerField.value;
+            if (answer == sum) {
+                feedback.textContent = "Congratulations! It's a good answer!";
+                feedback.style.backgroundColor = 'green';
+            } else {
+                feedback.textContent = "Unfortunately, you were wrong. The correct answer is: " + sum + ".";
+                feedback.style.backgroundColor = 'red';
+            }
         }
     </script>
 </body>
