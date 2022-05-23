@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOWISO assignment</title>
+    <link type="text/css" rel="stylesheet" href="index.css" />
+</head>
+<body>  
+    <h1>WHAT IS THE SUM?</h1>
+
+    <div>
+        <p id="feedback">&nbsp;</p>
+    </div>
+
+    <div class="form">
+        <label id="addition"></label>
+        <input type="number" class="answerField">
+    </div>
+
+    <div>
+        <input type ="button" value="calculate" class="answerButton">
+    </div>
+
+    <footer>SOWISO ASSIGNMENT</footer>
+
+    <script>
+        let randomNumberA = Math.floor(Math.random() * 1000) + 1;
+        let randomNumberB = Math.floor(Math.random() * 1000) + 1;
+        let sum = randomNumberA + randomNumberB;
+        
+        const button = document.querySelector('.answerButton');
+        const answerField = document.querySelector('.answerField');
+        let answer = answerField.value;
+
+        button.addEventListener('click', clickButton);
+        
+        addition.textContent=randomNumberA + " + " + randomNumberB + " = "
+        answerField.focus();
+
+        function clickButton() {
+            if(button.value == "calculate"){
+                answer = answerField.value;
+                if (answer == sum) {
+                    feedback.textContent = "Congratulations! It's a good answer!";
+                } else {
+                    feedback.textContent = "Unfortunately, you were wrong. The correct answer is: " + sum + ".";
+                }
+                button.value = "reset";
+            } else {
+                feedback.textContent = "\xa0";
+                randomNumberA = Math.floor(Math.random() * 1000) + 1;
+                randomNumberB = Math.floor(Math.random() * 1000) + 1;
+                sum = randomNumberA + randomNumberB;
+                addition.textContent=randomNumberA + " + " + randomNumberB + " = ";
+                answerField.value="";
+                button.value = "calculate";
+            }
+        }
+    </script>
+</body>
+</html>

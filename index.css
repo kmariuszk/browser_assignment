@@ -1,0 +1,57 @@
+body {
+    text-align: center;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #594864;
+}
+
+h1 {
+    font-size: 80px;
+    color: #BE567C;
+}
+
+#feedback {
+    font-size: 30px;
+    color: #BE567C;
+}
+
+.form {
+    font-size: 40px;
+    color: #ffffff;
+}
+
+.answerField {
+    font-size: 40px;
+    color: #ffffff;
+    border-color: #BE567C;
+    border-style:solid;
+    border-width: 2px;
+    background-color: #594864;
+    width: 150%;
+}
+
+.answerField:focus {
+    outline: none;
+}
+
+.answerButton {
+    font-size: 40px;
+    color: #ffffff;
+    width: 350px;
+    margin-top: 20px;
+    padding: 5px 70px;
+    background-color: #BE567C;
+    border-style:hidden;
+}
+
+input[type=number] {
+    width: 120px;
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    height: 30px;
+    bottom: 0;
+    color: #BE567C;
+}
